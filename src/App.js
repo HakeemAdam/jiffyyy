@@ -53,7 +53,8 @@ class App extends Component {
       const { data } = await response.json();
 
       if (!data.length) {
-        throw `Nothing found for ${searchTerm}`
+        const errorMessage = `Nothing found for ${searchTerm}`
+        throw errorMessage;
       }
 
       const randomGif = randomChoice(data);
